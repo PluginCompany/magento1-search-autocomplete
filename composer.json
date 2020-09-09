@@ -1,0 +1,15 @@
+{
+    "name": "plugincompany/magento1-search-autocomplete",
+    "description": "Search Autocomplete for Magento 1 / OpenMage",
+    "type": "magento-module",
+    "license": "MIT",
+    "homepage": "https://plugin.company/magento1-extensions/search-autocomplete.html",
+    "support": {
+        "issues": "https://github.com/PluginCompany/magento1-search-autocomplete/issues",
+        "source": "https://github.com/PluginCompany/magento1-search-autocomplete"
+    },
+    "version": "1.14.4",
+    "require": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

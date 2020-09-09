@@ -1,0 +1,60 @@
+<?php /** @var $this Plugincompany_Autocomplete_Block_Adminhtml_Cache  */ ?>
+<table class="form-list">
+    <tr>
+        <td class="scope-label">
+            <?php if($this->isCacheRebuilding()){ ?>
+                <img style="width:18px;vertical-align:bottom;" src="<?php echo $this->getLoaderImageUrl(); ?>" />
+            <?php } ?>
+            <button
+                    <?php echo $this->getDisabledHtml(); ?>
+                    onclick="setLocation('<?php echo $this->getRebuildUrl(); ?>')"
+                    type="button"
+                    class="scalable <?php echo $this->getDisabledClass(); ?>" >
+
+                <span>
+                    <span>
+                        <span>
+                            <?php echo Mage::helper('adminhtml')->__($this->getButtonText());?>
+                        </span>
+                    </span>
+                </span>
+            </button>
+        </td>
+        <td class="scope-label">
+            <?php if($this->isCacheRebuilding()){ ?>
+                <?php echo Mage::helper('adminhtml')->__(
+                        'You can keep this page open if you like. The page will be automatically refreshed once ready.'
+                )?>
+            <?php }else{ ?>
+                <?php echo Mage::helper('adminhtml')->__('Rebuild the search suggestion cache.')?>
+            <?php } ?>
+        </td>
+    </tr>
+</table>
+<?php if($this->isCacheRebuilding()){ ?>
+    <script>
+        Ajax.Responders.unregister(varienLoaderHandler.handler);
+        function checkAutocompleteRebuilding() {
+            new Ajax.Request('<?php echo $this->getCheckStatusUrl(); ?>', {
+                method:'get',
+                onSuccess: function(transport) {
+                    if(transport.responseText == 'ready'){
+                        return location.reload();
+                    }
+                    if(transport.responseText == 'error'){
+                        return location.reload();
+                    }
+                    setTimeout(function() {
+                        checkAutocompleteRebuilding();
+                    }, 3000)
+                },
+                onFailure: function() {
+                    console.log('Something went wrong...');
+                    return false;
+                }
+            });
+        }
+        checkAutocompleteRebuilding();
+    </script>
+
+<?php } ?>

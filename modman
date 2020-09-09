@@ -1,0 +1,12 @@
+app/code/local/Plugincompany/Autocomplete app/code/local/Plugincompany/Autocomplete
+app/design/adminhtml/default/default/layout/plugincompany_autocomplete.xml app/design/adminhtml/default/default/layout/plugincompany_autocomplete.xml
+app/design/adminhtml/default/default/template/plugincompany/autocomplete app/design/adminhtml/default/default/template/plugincompany/autocomplete
+app/design/frontend/base/default/layout/plugincompany_autocomplete.xml app/design/frontend/base/default/layout/plugincompany_autocomplete.xml
+app/design/frontend/base/default/template/plugincompany/autocomplete app/design/frontend/base/default/template/plugincompany/autocomplete
+app/etc/modules/Plugincompany_Autocomplete.xml app/etc/modules/Plugincompany_Autocomplete.xml
+app/locale/en_US/Plugincompany_Autocomplete.csv app/locale/en_US/Plugincompany_Autocomplete.csv
+js/plugincompany/autocomplete js/plugincompany/autocomplete
+js/plugincompany/jquerynoconflict.js js/plugincompany/jquerynoconflict.js
+shell shell
+skin/frontend/base/default/css/plugincompany_autocomplete.css skin/frontend/base/default/css/plugincompany_autocomplete.css
+skin/frontend/base/default/images/pc_autocomplete_arrow.png skin/frontend/base/default/images/pc_autocomplete_arrow.png
